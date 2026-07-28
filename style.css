@@ -756,3 +756,244 @@ footer {
         gap: 2rem;
     }
 }
+
+/* Logo & Rebranding Subtitles */
+.logo {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.2;
+    transition: var(--transition);
+}
+
+.logo-sub {
+    font-size: 0.72rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 1px;
+}
+
+nav.scrolled .logo-sub {
+    color: var(--text-light);
+}
+
+.hero-former {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--accent-color);
+    margin-top: -0.5rem;
+    margin-bottom: 1rem;
+    opacity: 0.95;
+}
+
+.footer-former {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+/* Mess Section */
+.mess-subtitle {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+}
+
+.mess-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.mess-image {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+}
+
+.mess-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.mess-image:hover {
+    transform: translateY(-5px);
+}
+
+.mess-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(74, 222, 128, 0.15);
+    color: var(--primary-color);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.mess-info h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.mess-desc {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.mess-highlights {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.highlight-item i {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+
+.highlight-item h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.highlight-item p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.mess-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+}
+
+.mess-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.mess-features li i {
+    color: var(--accent-hover);
+    font-size: 0.9rem;
+}
+
+/* Google Reviews Summary Card */
+.google-reviews-card {
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    box-shadow: var(--shadow-md);
+    flex-wrap: wrap;
+}
+
+.google-rating-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.google-icon {
+    font-size: 2.2rem;
+    color: #4285F4;
+}
+
+.google-rating-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rating-stars {
+    color: #fbbc05;
+    font-size: 1.1rem;
+    display: flex;
+    gap: 0.2rem;
+}
+
+.rating-score {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.btn-google {
+    background-color: #4285F4;
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-google:hover {
+    background-color: #3367d6;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: var(--white);
+}
+
+/* Responsive Media Queries for New Sections */
+@media (max-width: 992px) {
+    .mess-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .mess-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .google-reviews-card {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .google-rating-info {
+        align-items: center;
+    }
+
+    .logo-sub {
+        font-size: 0.65rem;
+    }
+}

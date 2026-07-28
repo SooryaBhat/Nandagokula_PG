@@ -90,4 +90,37 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(reveal);
     });
 
+    // Circular Favicon Generator (Preserves pg hero.jpeg while presenting inside a clean circular shape)
+    function makeCircularFavicon() {
+        const img = new Image();
+        img.crossOrigin = 'Anonymous';
+        img.src = 'pg%20hero.jpeg';
+        img.onload = () => {
+            const canvas = document.createElement('canvas');
+            const size = 128;
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+
+            // Create circular clipping path
+            ctx.beginPath();
+            ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.clip();
+
+            // Draw full image inside circle
+            ctx.drawImage(img, 0, 0, size, size);
+
+            let link = document.querySelector("link[rel*='icon']");
+            if (!link) {
+                link = document.createElement('link');
+                link.rel = 'icon';
+                document.head.appendChild(link);
+            }
+            link.type = 'image/png';
+            link.href = canvas.toDataURL('image/png');
+        };
+    }
+    makeCircularFavicon();
+
 });
